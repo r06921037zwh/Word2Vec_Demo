@@ -1,0 +1,46 @@
+{% extends "base.html"%}
+{% block content %}
+    <form class="Input" action="#" method="get" border="10">
+      <div class="form-group row" border=5px>
+        <div class="col-xs-3">
+          <label for="keyword">Input Keyword: </label>
+          <input id='keyword' class="form-control" type="text" name="keyword" placeholder="ex: 債務">
+          <input type="submit" class="btn btn-primary" name="Submit" value="Submit">
+        </div>
+      </div>
+    </form>
+
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Similarity Result:</div>
+        <div class="panel-body">
+          <div id="GetResponse">
+            {% if response %}
+            <script>
+              document.getElementById('{{ scroll }}').scrollIntoView();
+            </script>
+
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Word</th>
+                    <th scope="col">Cos Similarity</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for element in response %}
+                  <tr>
+                    <td>{{element[0]}}</td>
+                    <td>{{element[1]}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+
+              </table>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

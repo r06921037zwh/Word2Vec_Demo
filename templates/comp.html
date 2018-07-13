@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% block content %}
+<form class="Input" action="#" method="get" border="10">
+  <div class="form-group row" border=5px>
+    <div class="col-xs-3">
+      <label for="keyword1">First Keyword: </label>
+      <input id='keyword1' class="form-control" type="text" name="keyword1" placeholder="ex: 信用卡">
+      <label for="keyword2">Second Keyword: </label>
+      <input id='keyword2' class="form-control" type="text" name="keyword2" placeholder="ex: 欠債">
+      <input type="submit" class="btn btn-primary" name="Submit" value="Submit">
+    </div>
+  </div>
+</form>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Similarity Result:</div>
+    <div class="panel-body">
+      <div id="GetResponse">
+        {% if response %}
+        <script>
+          document.getElementById('{{ scroll }}').scrollIntoView();
+        </script>
+
+            <p><strong>cosine similarity is {{response}}</strong></p>
+            <p><strong>For {{keyword1}}, the most_similar one is {{ans1[0]}}, cos_sim is {{ans1[1]}}</strong></p>
+            <p><strong>For {{keyword2}}, the most_similar one is {{ans2[0]}}, cos_sim is {{ans2[1]}}</strong></p>
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
