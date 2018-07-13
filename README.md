@@ -7,3 +7,5 @@
 ```python
 bash run.sh
 ```
+
+### Test Environment: Ubuntu 16.04
