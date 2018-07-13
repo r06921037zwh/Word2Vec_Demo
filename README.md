@@ -6,6 +6,8 @@
 ### Usage:
 ```python
 bash run.sh
+# then open the browser with url: http://127.0.0.1:5000
 ```
+
 
 ### Test Environment: Ubuntu 16.04
