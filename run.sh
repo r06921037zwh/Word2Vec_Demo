@@ -1,4 +1,4 @@
 #!/bin/bash
-wget https://drive.google.com/open?id=1Ba5Od0LK7eRthGXmMBAb9ROBTDjM60wQ
+wget -O model.zip https://www.dropbox.com/s/fjr9rtupy7imx63/model.zip?dl=0
 unzip model.zip
 python app.py
