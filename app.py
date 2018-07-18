@@ -4,7 +4,10 @@ import os
 
 app = Flask(__name__)
 print("Loading Model ... ")
-model = word2vec.Word2Vec.load(os.path.join('model', 'news_and_sg2.model'))
+# Chinese Model
+#model = word2vec.Word2Vec.load(os.path.join('model', 'news_and_sg2.model'))
+# Japanese Model
+model = word2vec.Word2Vec.load(os.path.join('model', 'word2vec.gensim.model'))
 
 @app.route('/')
 def index():
